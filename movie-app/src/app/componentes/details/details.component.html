@@ -1,0 +1,34 @@
+<div class="movie">
+  <div class="details" *ngIf="movie">
+    <div class="movie-container" >
+      <img
+      *ngIf="movie.poster_path"
+        src='https://image.tmdb.org/t/p/w342/{{movie.poster_path}}'
+        alt=""
+        class="movie-img" />
+    </div>
+        <div class="description">
+          <br>
+            <span >
+              <p class="movie-name">{{movie.title}}</p>
+              <div class="movie-vote_average">{{movie.vote_average}}</div><br>
+              <mat-icon class="movie-votes-up">thumb_up</mat-icon>
+              <span class="movie-votes-count">{{ movie.vote_count || 0 }}</span>
+            </span>
+          <br>
+            <p class="movie-genre">
+              <span *ngFor="let genre of movie.genres">{{genre.name}},</span> 
+          </p>
+        <br>
+          <p class="movie-overwiev"><strong>Overview: </strong>{{movie.overview}}</p>
+        <br>
+      </div>
+       <br>
+        <br>
+    <button class="save-button" (click)="addToCart(movie)">Save</button>
+  </div>
+</div>
+       
+    
+
+ 

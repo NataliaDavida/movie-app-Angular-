@@ -1,0 +1,99 @@
+h1 {
+    color: #fff;
+    text-align: center;
+    margin: 50px;
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+   
+}
+
+.movie {
+    width: 260px;
+    margin: 10px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #202020;
+    box-shadow: 4px 3px 8px 0px lightblue;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  
+    &:hover {
+      box-shadow: 4px 3px 11px 6px white;
+      transform: translateY(-3px);
+    }
+  
+    &-container {
+      background-color: #000;
+      position: relative;
+      height: 250px;
+      color: #fff;
+      text-align: center;
+    }
+  
+    &-description {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 90px;
+    }
+  
+    &-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+
+    &-release_date {
+      color: rgba(255, 255, 255, 0.527);
+      font-size: 12px;
+    }
+  
+   .movie-img {
+    height: 250px;
+    width: 280px;
+   
+   }
+   
+    &-description {
+      padding: 20px;
+    }
+  }
+
+.delete-button {
+   
+    text-align: center;
+    border: none;
+    outline: none;
+    background: #3f51b5;
+    width: 60px;
+    padding: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 100px;
+
+    
+    &:hover {
+        color: #3f51b5;
+        background-color: #fff;
+        border: 1px solid #3f51b5;
+      }
+   
+}

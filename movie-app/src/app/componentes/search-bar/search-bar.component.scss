@@ -1,0 +1,45 @@
+.search {
+    &-container {
+      width: 100%;
+      height: 60px;
+      background-color: #3f51b9;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 4;
+    }
+  
+    &-form {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    &-input {
+   
+      padding: 10px;
+      width: 300px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+    }
+}
+
+  .logo {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+  
+  a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+
+  

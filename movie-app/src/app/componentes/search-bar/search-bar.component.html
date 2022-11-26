@@ -1,0 +1,21 @@
+<div class="search-container">
+  <a  [routerLink]="['/']" class="logo">All Movies</a>
+  <div class="search-form">
+
+    <input
+      type="text"
+      class="search-input" 
+      [(ngModel)]="searchTerm"
+      (keyup)="search($event)" 
+      placeholder="Search..."/>
+   
+  </div>
+    <button *ngIf="authService.isLogin()" mat-raised-button type="submit" color="primary" [routerLink]="['/cart']">My List</button>
+    <button *ngIf="!authService.isLogin()" mat-raised-button type="submit" color="primary" [routerLink]="['/signin']">Sing In</button>
+    <button *ngIf="authService.isLogin()" mat-raised-button type="submit" color="primary" (click)="logOut()">logout</button>
+
+</div>
+  
+
+     
+

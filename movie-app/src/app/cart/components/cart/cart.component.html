@@ -1,0 +1,20 @@
+<h1>My Movies</h1>
+<div class="movies">
+    <div class="movie" *ngFor="let item of items ">
+        
+            <div class="movie-container" >
+                <img
+                *ngIf="item.poster_path"
+                src='https://image.tmdb.org/t/p/w342/{{item.poster_path}}'
+                alt=""
+                class="movie-img"
+                />
+            </div>
+            <div class="movie-description">
+                <p class="movie-name">{{item.title}}</p>
+                <p class="movie-release_date">Release Date:{{item.release_date}}</p>
+
+            </div>  
+            <button class="delete-button" (click)="deleteFromCart(item)">Delete</button>
+    </div>
+</div>

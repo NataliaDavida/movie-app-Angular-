@@ -1,0 +1,21 @@
+<div class="movies">  
+    <ng-container *ngFor="let movie of movies | filter: searchKey: 'title'">
+      <div class="movie" (click)="openMovieDetails(movie.id)" >
+        <div class="movie-container" >
+          <img
+          *ngIf="movie.poster_path"
+            src='https://image.tmdb.org/t/p/w342/{{movie.poster_path}}'
+            alt=""
+            class="movie-img"
+          />
+        </div>
+        <div class="movie-description">
+          <p class="movie-name">{{movie.title}}</p>
+          <p class="movie-release_date">Release Date:{{movie.release_date}}</p>
+          <p class="movie-vote_average">{{movie.vote_average}}</p>
+        </div>
+      </div>
+    </ng-container> 
+  </div>
+  
+

@@ -1,0 +1,96 @@
+
+.movie {
+    width: 60%;
+    margin: 40px auto;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #202020;
+    box-shadow: 4px 3px 8px 0px lightblue;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color:  rgba(255, 255, 255, 0.527);
+    font-size: 18px;
+    position: relative;
+
+    &:hover {
+      box-shadow: 4px 3px 11px 6px white;
+      transform: translateY(-3px);
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      height: 280px;
+      position: relative;
+     
+    }
+    .movie-img {
+      height: 280px;
+      width: 250px;
+    }
+  
+    &-name {
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &-vote_average {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+
+    }
+    &-votes {
+      &-up {
+        color: #5ee432;
+      }
+    
+      &-count {
+        margin-left: 5px;
+        margin-right: 10px;
+        vertical-align: super;
+        color: rgba(255, 255, 255, 0.527);
+      }
+
+    }
+    
+}
+
+  .save-button {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    text-align: center;
+    right: 30px;
+    bottom: 30px;
+    border: none;
+    outline: none;
+    background: #3f51b5;
+    padding: 10px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+  
+    &:hover {
+      color: #3f51b5;
+      background-color: #fff;
+      border: 1px solid #3f51b5;
+    }
+  }
