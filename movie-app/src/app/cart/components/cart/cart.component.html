@@ -1,20 +1,19 @@
 <h1>My Movies</h1>
-<div class="movies">
-    <div class="movie" *ngFor="let item of items ">
-        
+<div *ngIf="movies.length !=0" class="movies">
+    <div class="movie" *ngFor="let movie of movies;let i = index">
             <div class="movie-container" >
                 <img
-                *ngIf="item.poster_path"
-                src='https://image.tmdb.org/t/p/w342/{{item.poster_path}}'
+                *ngIf="movie.poster_path"
+                src='https://image.tmdb.org/t/p/w342/{{movie.poster_path}}'
                 alt=""
                 class="movie-img"
                 />
             </div>
             <div class="movie-description">
-                <p class="movie-name">{{item.title}}</p>
-                <p class="movie-release_date">Release Date:{{item.release_date}}</p>
-
+                <p class="movie-name">{{movie.title}}</p>
+                <p class="movie-release_date">Release Date:{{movie.release_date}}</p>
             </div>  
-            <button class="delete-button" (click)="deleteFromCart(item)">Delete</button>
+            <button class="delete-button" (click)="removeItem(movie)">Delete</button>
     </div>
+    <button class="clear-button" (click)="emptycart()">X</button>
 </div>

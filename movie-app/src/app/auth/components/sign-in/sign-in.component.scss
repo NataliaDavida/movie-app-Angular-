@@ -1,7 +1,29 @@
 .main-div mat-card {
   padding: 0px;
 }
+
+mat-toolbar {
+  font-weight: lighter;
+}
+
+mat-form-field {
+padding: 15px;
+padding-bottom: 0;
+font-size: 18px;
+font-weight: lighter;
+}
+
 button {
   width: 80px;
   margin: 10px auto;
+  font-weight: lighter;
+
+  &:hover {
+    color: #3f51b5;
+    background-color: #fff;
+    border: 1px solid #3f51b5;
+  }
+}
+p{
+  color: white;
 }

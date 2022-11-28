@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     .getMovieList()
     .subscribe((movieList: APIResponse<Movie>) => {
       this.movies = movieList.results;
-    });
+    })
 
     this.searchService.search.subscribe((val:any)=>{
       this.searchKey = val;
@@ -39,13 +39,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
      
     openMovieDetails(id: string): void {
-      this.router.navigate(['details', id]);
+      this.router.navigate(['details', id])
     }
 
-    
     ngOnDestroy(): void {
       if (this.movieSub) {
-        this.movieSub.unsubscribe();
+        this.movieSub.unsubscribe()
       }
     }
      

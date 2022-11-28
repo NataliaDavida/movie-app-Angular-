@@ -13,7 +13,6 @@
     <button *ngIf="authService.isLogin()" mat-raised-button type="submit" color="primary" [routerLink]="['/cart']">My List</button>
     <button *ngIf="!authService.isLogin()" mat-raised-button type="submit" color="primary" [routerLink]="['/signin']">Sing In</button>
     <button *ngIf="authService.isLogin()" mat-raised-button type="submit" color="primary" (click)="logOut()">logout</button>
-
 </div>
   
 

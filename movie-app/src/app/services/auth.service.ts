@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  isLogin(): boolean {
+  public isLogin(): boolean {
     return !!localStorage.getItem('session_id')
   }
   public login(): Observable<TokenInterface> {

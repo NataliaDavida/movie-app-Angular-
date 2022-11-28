@@ -16,12 +16,10 @@ export class SignInComponent implements OnInit {
 
   formGroup : FormGroup;
  
-  constructor(private authService: AuthService,
-    private router: Router){}
-              
+  constructor(private authService: AuthService, private router: Router){}         
 
   ngOnInit() {
-    this.validForm();
+    this.validForm()
   }
 
   validForm () {
@@ -36,8 +34,8 @@ export class SignInComponent implements OnInit {
       this.authService.login()
       .pipe(
         switchMap((token: TokenInterface)=>{
-          const body = this.formGroup.value;
-          body.request_token = token.request_token;
+          const body = this.formGroup.value
+          body.request_token = token.request_token
           return this.authService.validate(body)
         }),
         switchMap((token:TokenInterface )=>{

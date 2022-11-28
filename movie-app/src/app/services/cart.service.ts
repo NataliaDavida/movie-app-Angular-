@@ -1,5 +1,5 @@
-import { Injectable, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -7,28 +7,39 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   
- items: string[] = [];
+public cartItemList : any =[]
+public moviesList = new BehaviorSubject<any>([]);
 
-  constructor(
-    private http: HttpClient
-  ) {}
+constructor() { }
 
-  addToCart(item: any) {
-    
-    this.items.push(item);
-    localStorage.setItem("movie", JSON.stringify(this.items))
-  }
+getMovies(){
+  return this.moviesList.asObservable();
+}
 
+setMovies(movie : any){
+  this.cartItemList.push(...movie);
+  this.moviesList.next(movie);
+}
 
-  deleteFromCart(item: any) {
-    for(let i = 0; i< this.items.length; i++) {
-      localStorage.removeItem(item)
-      if (this.items[i] == item )
-      this.items.slice(i, 1)
-     
-       return this.items     
+addtoCart(movie : any){
+  this.cartItemList.push(movie);
+  this.moviesList.next(this.cartItemList);
+  localStorage.setItem("movie", JSON.stringify(this.cartItemList))
+  console.log(this.cartItemList)
+}
+
+removeCartItem(movie: any){
+  this.cartItemList.map((a:any, index:any)=>{
+    if(movie.id=== a.id){
+      this.cartItemList.splice(index,1);
     }
-    console.log(this.items)
-  }
+  })
+  this.moviesList.next(this.cartItemList);
+}
 
+removeAllCart(){
+  this.cartItemList = []
+  localStorage.removeItem("movie")
+  this.moviesList.next(this.cartItemList);
+}
 }

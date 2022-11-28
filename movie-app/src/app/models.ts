@@ -7,7 +7,6 @@ export interface Movie {
     genres: Array<Genre>;
     vote_average: Array<Rating>;
     vote_count: number;
-    video: Array<any>;
 }
   
   export interface APIResponse<T> {
@@ -28,11 +27,10 @@ export interface Movie {
     success: boolean;
     expires_at: string;
     request_token: string;
-
-
   }
   
   export interface SessionIdInterface {
     success: boolean;
     session_id: string;
   }
+

@@ -30,10 +30,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      this.movieId = params['id'];
-      this.getMovieDetails(this.movieId);
+      this.movieId = params['id']
+      this.getMovieDetails(this.movieId)
 
-    });
+    })
     
   }
 
@@ -47,23 +47,23 @@ export class DetailsComponent implements OnInit, OnDestroy {
       });
   }
     
-  addToCart(item: any) {
+  addToCart(movie: any) {
    
     if (!this.authService.isLogin()) {
       this.router.navigate(['/signin'])
       return;
     }
-    window.alert('Your product has been added to the cart!');
-    this.cartService.addToCart(item);
+    window.alert('Your product has been added to the cart!')
+    this.cartService.addtoCart(this.movie);
   }
  
     ngOnDestroy(): void {
     if (this.movieSub) {
-      this.movieSub.unsubscribe();
+      this.movieSub.unsubscribe()
     }
 
     if (this.routeSub) {
-      this.routeSub.unsubscribe();
+      this.routeSub.unsubscribe()
     }
   }
 

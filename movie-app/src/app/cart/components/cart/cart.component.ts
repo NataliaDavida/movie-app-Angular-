@@ -9,25 +9,22 @@ import { CartService } from '../../../services/cart.service';
 })
 export class CartComponent implements OnInit {
  
-  items: any;
+  public movies : any = []
 
-  constructor( private cartService: CartService, private router: Router) {}
+  constructor(private cartService : CartService) { }
   
+  ngOnInit(): void {
+    this.cartService.getMovies()
+    .subscribe(res=>{this.movies = res;})
+  }
 
-    ngOnInit() {
-     this.items = JSON.parse(localStorage.getItem("movie") || '[]')
-     
-    }
-
-    deleteFromCart(item: any) {
-      window.alert('Your product has been delete from the cart!');
-      this.cartService.deleteFromCart(item);
-      console.log(this.items)
-    }
+  removeItem(movie: any){
+    this.cartService.removeCartItem(movie);
+  }
+  
+  emptycart(){
+    this.cartService.removeAllCart();
     
-    logout() {
-      setTimeout(() => {
-        this.router.navigate(['/signin'])
-      }, 2000)
-    }
+  }
+
 }
